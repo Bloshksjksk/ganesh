@@ -117,8 +117,8 @@ async def account_login(bot: Client, m: Message):
     )
 )
     input2: CallbackQuery = await bot.listen(editable.chat.id)
-    raw_text2 = input2.text
-   # await input2.delete(True)
+    raw_text2 = input2.data
+    await input2.delete(True)
     try:
         if raw_text2 == "144" or input2 == "144":
             res = "256x144"
@@ -138,7 +138,7 @@ async def account_login(bot: Client, m: Message):
         elif raw_text2 == "720" or input2 == "720p":
             res = "1280x720"
             await m.reply_text(f"Selected resolution: {res}")
-        elif raw_text2 == "1080"or input2 == "1080p":
+        elif raw_text2 == "1080" or input2 == "1080p":
             res = "1920x1080" 
             await m.reply_text(f"Selected resolution: {res}")
         else: 
