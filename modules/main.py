@@ -31,7 +31,7 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("**ℍɪɪ** ┈━═𝙈𝙮 𝙁𝙧𝙚𝙞𝙣𝙙═━┈😎\𝙣\𝙣 𝙄 𝘼𝙢 𝘼 𝘽𝙤𝙩 𝙁𝙤𝙧 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙇𝙞𝙣𝙠𝙨 𝙁𝙧𝙤𝙢 𝙔𝙤𝙪𝙧 **.𝙏𝙓𝙏** 𝙁𝙞𝙡𝙚 𝘼𝙣𝙙 𝙏𝙝𝙚𝙣 𝙐𝙥𝙡𝙤𝙖𝙙 𝙏𝙝𝙖𝙩 𝙁𝙞𝙡𝙚 𝙊𝙢 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢 𝙎𝙤 𝘽𝙖𝙨𝙞𝙘𝙖𝙡𝙡𝙮 𝙄𝙛 𝙔𝙤𝙪 𝙒𝙖𝙣𝙩 𝙏𝙤 𝙐𝙨𝙚 𝙈𝙚 𝙁𝙞𝙧𝙨𝙩 𝙎𝙚𝙣𝙙 𝙈𝙚 /upload 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝘼𝙣𝙙 𝙏𝙝𝙚𝙣 𝙁𝙤𝙡𝙡𝙤𝙬 𝙁𝙚𝙬 𝙎𝙩𝙚𝙥𝙨..\n\n #𝙣𝙤𝙩𝙚: 𝙄 𝙖𝙢 𝙊𝙣𝙡𝙮 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 2𝙂𝘽",reply_markup=InlineKeyboardMarkup([
+    editable = await m.reply_photo(photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",caption="**ℍɪɪ** ┈━═𝙈𝙮 𝙁𝙧𝙚𝙞𝙣𝙙═━┈😎\𝙣\𝙣 𝙄 𝘼𝙢 𝘼 𝘽𝙤𝙩 𝙁𝙤𝙧 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙇𝙞𝙣𝙠𝙨 𝙁𝙧𝙤𝙢 𝙔𝙤𝙪𝙧 **.𝙏𝙓𝙏** 𝙁𝙞𝙡𝙚 𝘼𝙣𝙙 𝙏𝙝𝙚𝙣 𝙐𝙥𝙡𝙤𝙖𝙙 𝙏𝙝𝙖𝙩 𝙁𝙞𝙡𝙚 𝙊𝙢 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢 𝙎𝙤 𝘽𝙖𝙨𝙞𝙘𝙖𝙡𝙡𝙮 𝙄𝙛 𝙔𝙤𝙪 𝙒𝙖𝙣𝙩 𝙏𝙤 𝙐𝙨𝙚 𝙈𝙚 𝙁𝙞𝙧𝙨𝙩 𝙎𝙚𝙣𝙙 𝙈𝙚 /upload 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝘼𝙣𝙙 𝙏𝙝𝙚𝙣 𝙁𝙤𝙡𝙡𝙤𝙬 𝙁𝙚𝙬 𝙎𝙩𝙚𝙥𝙨..\n\n #𝙣𝙤𝙩𝙚: 𝙄 𝙖𝙢 𝙊𝙣𝙡𝙮 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 2𝙂𝘽",reply_markup=InlineKeyboardMarkup([
             [
                 InlineKeyboardButton("𝙏𝙍𝙐𝙈𝘽𝙊𝙏𝙎", url="https://t.me/movie_time_botonly"),
                 InlineKeyboardButton("𝘾𝙍𝙀𝘼𝙏𝙊𝙍", url="https://t.me/fligher")
@@ -98,7 +98,7 @@ async def account_login(bot: Client, m: Message):
     await input1.delete(True)
     
 
-    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**",reply_markup=InlineKeyboardMarkup(
+    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸 Just For Fun 😜😜**",reply_markup=InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton("𝟭𝟰𝟰𝗽", callback_data="144"),
@@ -111,44 +111,50 @@ async def account_login(bot: Client, m: Message):
                 InlineKeyboardButton("𝟭𝟬𝟴𝟬𝗽", callback_data="1080")
             ],
             [
-                InlineKeyboardButton("cancel/stop", callback_data="stop")
+                InlineKeyboardButton("Any Doubt !? ", url="https://t.me/fligher")
             ]
         ]
     )
 )
     input2: CallbackQuery = await bot.listen(editable.chat.id)
-    raw_text2 = input2.data
-    await input2.message.delete(True)
+    raw_text2 = input2.text
+    await input2.delete(True)
     try:
-        if raw_text2 == "144" or input2 == "144":
+        if raw_text2 == "144":
             res = "256x144"
             await m.reply(raw_text2)
+            await input2.answer("Just for fun! type the value as 144")
             await m.reply_text(f"Selected resolution: {res}")
             
-        elif raw_text2 == "240" or input2 == "240":
+        elif raw_text2 == "240":
             res = "426x240"
             await m.reply(raw_text2)
+            await input2.answer("Just for fun! type 240")
             await m.reply_text(f"Selected resolution: {res}")
             
-        elif raw_text2 == "360" or input2 == "360p":
+        elif raw_text2 == "360":
             res = "640x360"
             await m.reply(raw_text2)
+            await input2.answer("Just for fun! type 360")
             await m.reply_text(f"Selected resolution: {res}")
             
-        elif raw_text2 == "480" or input2 == "480p":
+        elif raw_text2 == "480":
             res = "854x480"
             await m.reply(raw_text2)
+            await input2.answer("Just for fun! type 480p")
             await m.reply_text(f"Selected resolution: {res}")
             
-        elif raw_text2 == "720" or input2 == "720p":
+        elif raw_text2 == "720":
             res = "1280x720"
             await m.reply(raw_text2)
+            await input2.answer("Just for fun! type 720p")
             await m.reply_text(f"Selected resolution: {res}")
             
-        elif raw_text2 == "1080" or input2 == "1080p":
+        elif raw_text2 == "1080":
         
             res = "1920x1080" 
             await m.reply(raw_text2)
+            await input2.answer("Just for fun! type 1080p")
             await m.reply_text(f"Selected resolution: {res}")
         else: 
             res = "UN"
