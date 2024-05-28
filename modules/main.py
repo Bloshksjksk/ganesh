@@ -9,7 +9,7 @@ import subprocess
 
 import core as helper
 from utils import progress_bar
-from vars import api_id, api_hash, bot_token
+from vars import api_id, api_hash, bot_token,likeurl
 from aiohttp import ClientSession
 from pyromod import listen
 from subprocess import getstatusoutput
@@ -31,19 +31,34 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("**ℍɪɪ** ┈━═My Freind═━┈😎\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..")
+    editable = await m.reply_text("**ℍɪɪ** ┈━═𝙈𝙮 𝙁𝙧𝙚𝙞𝙣𝙙═━┈😎\𝙣\𝙣 𝙄 𝘼𝙢 𝘼 𝘽𝙤𝙩 𝙁𝙤𝙧 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙇𝙞𝙣𝙠𝙨 𝙁𝙧𝙤𝙢 𝙔𝙤𝙪𝙧 **.𝙏𝙓𝙏** 𝙁𝙞𝙡𝙚 𝘼𝙣𝙙 𝙏𝙝𝙚𝙣 𝙐𝙥𝙡𝙤𝙖𝙙 𝙏𝙝𝙖𝙩 𝙁𝙞𝙡𝙚 𝙊𝙢 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢 𝙎𝙤 𝘽𝙖𝙨𝙞𝙘𝙖𝙡𝙡𝙮 𝙄𝙛 𝙔𝙤𝙪 𝙒𝙖𝙣𝙩 𝙏𝙤 𝙐𝙨𝙚 𝙈𝙚 𝙁𝙞𝙧𝙨𝙩 𝙎𝙚𝙣𝙙 𝙈𝙚 /upload 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝘼𝙣𝙙 𝙏𝙝𝙚𝙣 𝙁𝙤𝙡𝙡𝙤𝙬 𝙁𝙚𝙬 𝙎𝙩𝙚𝙥𝙨..\n\n #𝙣𝙤𝙩𝙚: 𝙄 𝙖𝙢 𝙊𝙣𝙡𝙮 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 2𝙂𝘽",reply_markup=InlineKeyboardMarkup(   [
+            [
+                InlineKeyboardButton("𝙏𝙍𝙐𝙈𝘽𝙊𝙏𝙎", url="https://t.me/movie_time_botonly"),
+                InlineKeyboardButton("𝘾𝙍𝙀𝘼𝙏𝙊𝙍", url="https://t.me/fligher")
+                
+            ]
+        ]
+        
+    )
 
 
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
-    await m.reply_text("**Stopped**🚦", True)
+    await m.reply_text("**Stopped**🚦\n\n <blockquote>start new one click => /upload </blockquote>", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
 @bot.on_message(filters.command(["upload"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('𝕋𝕆 ᴅᴏᴡɴʟᴏᴀᴅ ᴀ ᴛxᴛ ғɪʟᴇ 𝕤ᴇɴᴅ ʜᴇʀᴇ ⚡️')
+    editable = await m.reply_text(' 𝙎𝙚𝙣𝙙 𝘼 𝙏𝙚𝙭𝙩 𝙁𝙞𝙡𝙚 𝙏𝙝𝙖𝙩 𝘾𝙤𝙣𝙩𝙖𝙞𝙣𝙨 𝙇𝙞𝙣𝙠 𝙊𝙣𝙚 𝘽𝙮 𝙊𝙣𝙚..🔗', reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("cancel/stop", callback_data="stop")
+            ]
+        ]
+    )
+)
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -65,19 +80,42 @@ async def account_login(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"**𝕋ᴏᴛᴀʟ ʟɪɴᴋ𝕤 ғᴏᴜɴᴅ ᴀʀᴇ🔗🔗** **{len(links)}**\n\n**𝕊ᴇɴᴅ 𝔽ʀᴏᴍ ᴡʜᴇʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ɪɴɪᴛɪᴀʟ ɪ𝕤** **1**")
+    await editable.edit(f"**𝕋ᴏᴛᴀʟ ʟɪɴᴋ𝕤 ғᴏᴜɴᴅ ᴀʀᴇ🔗🔗** **{len(links)}**\n\n** Tell No of Links You Wants ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ɪɴɪᴛɪᴀʟ ɪ𝕤 ** **1**\n\n If It One Means it Will Download 1-link or first link",reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("cancel/stop", callback_data="stop")
+            ]
+        ]
+    ))
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("**Now Please Send Me Your Batch Name**")
+    await editable.edit("**Now Please Send Me Your Batch/file Name**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
     
 
-    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**\n144,240,360,480,720,1080 please choose quality")
-    input2: Message = await bot.listen(editable.chat.id)
+    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**",reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("144", callback_data="144"),
+                InlineKeyboardButton("240", callback_data="240"),
+                InlineKeyboardButton("360", callback_data="360")
+            ],
+            [
+                InlineKeyboardButton("480", callback_data="480"),
+                InlineKeyboardButton("720", callback_data="720"),
+                InlineKeyboardButton("1080", callback_data="1080")
+            ],
+            [
+                InlineKeyboardButton("cancel/stop", callback_data="stop")
+            ]
+        ]
+    )
+)
+    input2: CallbackQuery = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
     try:
@@ -110,7 +148,7 @@ async def account_login(bot: Client, m: Message):
     else:
         MR = raw_text3
    
-    await editable.edit("Now send the Thumb url/nEg » https://telegra.ph/file/1bf523c4b51530e57e84d.jpg \n Or if don't want thumbnail send = no")
+    await editable.edit("Now send the Thumb url/nEg » https://telegra.ph/file/1bf523c4b51530e57e84d.jpg \n\n Or if don't want thumbnail send = no/n")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -121,7 +159,7 @@ async def account_login(bot: Client, m: Message):
         getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'")
         thumb = "thumb.jpg"
     else:
-        thumb == "no"
+        thumb == "no" or thumb == "n"
 
     if len(links) == 1:
         count = 1
@@ -162,8 +200,8 @@ async def account_login(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[📽️] 𝗩𝗜𝗗_𝗜𝗗:** {str(count).zfill(3)}.\n**𝙏𝙄𝙏𝙇𝙀 ➤** {𝗻𝗮𝗺𝗲𝟭} 『𝗛𝗘𝗠𝗨』.mkv\n**𝗕𝗔𝗧𝗖𝗛** » **{raw_text0}**\n\n**𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 ➤** {MR}'
-                cc1 = f'**[📁] 𝗣𝗗𝗙_𝗜𝗗:** {str(count).zfill(3)}.\n**𝙏𝙄𝙏𝙇𝙀 ➤** {𝗻𝗮𝗺𝗲𝟭}『𝗛𝗘𝗠𝗨』.pdf\n**𝗕𝗔𝗧𝗖𝗛** » **{raw_text0}**\n\n**𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 ➤** {MR}'
+                cc = f'**[📽️] 𝗩𝗜𝗗_𝗜𝗗:** {str(count).zfill(3)}.\n**𝙏𝙄𝙏𝙇𝙀 ➤** {𝗻𝗮𝗺𝗲𝟭} 『𝙏𝙍𝙐𝙈𝘽𝙊𝙏𝙎』.mkv\n**𝗕𝗔𝗧𝗖𝗛** » **{raw_text0}**\n\n**𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 ➤** {MR}'
+                cc1 = f'**[📁] 𝗣𝗗𝗙_𝗜𝗗:** {str(count).zfill(3)}.\n**𝙏𝙄𝙏𝙇𝙀 ➤** {𝗻𝗮𝗺𝗲𝟭}『𝙏𝙍𝙐𝙈𝘽𝙊𝙏𝙎』.pdf\n**𝗕𝗔𝗧𝗖𝗛** » **{raw_text0}**\n\n**𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 ➤** {MR}'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -189,7 +227,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
+                    Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶⬇️⬇️... »**\n\n\n**📝Name »** `{name}\n\n\n❄Quality » {raw_text2}`\n\n\n**🔗URL »** `{url}`"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -200,13 +238,19 @@ async def account_login(bot: Client, m: Message):
 
             except Exception as e:
                 await m.reply_text(
-                    f"**downloading Interupted **\n{str(e)}\n**Name** » {name}\n**Link** » `{url}`"
+                    f"**downloading Interupted **\n\n\n{str(e)}\n\n\n**Name** » {name}\n\n\n**Link** » `{url}`"
                 )
                 continue
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("**𝗗𝗢𝗡𝗘 𝗕𝗢𝗦𝗦🩷✔️**")
+    await m.reply_text("**𝗗𝗢𝗡𝗘 𝗕𝗢𝗦𝗦🩷✔️**",reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("GIve 💖 Heart",url=likeurl)
+            ]
+        ]
+    ))
 
 
 bot.run()
