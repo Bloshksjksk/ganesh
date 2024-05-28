@@ -41,6 +41,18 @@ async def account_login(bot: Client, m: Message):
         
     )
 )
+@bot.on_message(filters.command(["about"]))
+async def account_login(bot: Client, m: Message):
+    editable = await m.reply_photo(photo="https://th.bing.com/th/id/OIG4.iV2l1_HaysKkHZXO8DlJ?pid=ImgGn",caption="𝙄 𝘼𝙢 𝘼 𝘽𝙤𝙩 𝙁𝙤𝙧 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙇𝙞𝙣𝙠𝙨 𝙁𝙧𝙤𝙢 𝙔𝙤𝙪𝙧 **.𝙏𝙓𝙏** 𝙁𝙞𝙡𝙚 𝘼𝙣𝙙 𝙏𝙝𝙚𝙣 𝙐𝙥𝙡𝙤𝙖𝙙 𝙏𝙝𝙖𝙩 𝙁𝙞𝙡𝙚 𝙊𝙢 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢 𝙎𝙤 𝘽𝙖𝙨𝙞𝙘𝙖𝙡𝙡𝙮 𝙄𝙛 𝙔𝙤𝙪 𝙒𝙖𝙣𝙩 𝙏𝙤 𝙐𝙨𝙚 𝙈𝙚 𝙁𝙞𝙧𝙨𝙩 𝙎𝙚𝙣𝙙 𝙈𝙚 /upload 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝘼𝙣𝙙 𝙏𝙝𝙚𝙣 𝙁𝙤𝙡𝙡𝙤𝙬 𝙁𝙚𝙬 𝙎𝙩𝙚𝙥𝙨..\n\n #𝙣𝙤𝙩𝙚: 𝙄 𝙖𝙢 𝙊𝙣𝙡𝙮 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 2𝙂𝘽",reply_markup=InlineKeyboardMarkup([
+            [
+                InlineKeyboardButton("𝙏𝙍𝙐𝙈𝘽𝙊𝙏𝙎", url="https://t.me/movie_time_botonly"),
+                InlineKeyboardButton("𝘾𝙍𝙀𝘼𝙏𝙊𝙍", url="https://t.me/fligher")
+                
+            ]
+        ]
+        
+    )
+)
 
 
 @bot.on_message(filters.command("stop"))
