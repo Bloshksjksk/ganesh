@@ -59,6 +59,13 @@ async def account_login(bot: Client, m: Message):
 async def restart_handler(_, m):
     await m.reply_text("**Stopped**🚦\n\n <blockquote>start new one click => /upload </blockquote>", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
+    
+    input: CallbackQuery = await bot.listen(editable.chat.id)
+    raw_text = input.data
+    await input.message.delete(True)
+
+    if raw_text == "/stop":
+        await bot.stop()
 
 
 
@@ -113,14 +120,14 @@ async def account_login(bot: Client, m: Message):
     await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸**",reply_markup=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("144", callback_data="144"),
-                InlineKeyboardButton("240", callback_data="240"),
-                InlineKeyboardButton("360", callback_data="360")
+                InlineKeyboardButton("𝟭𝟰𝟰𝗽", callback_data="144"),
+                InlineKeyboardButton("𝟮𝟰𝟬𝗽", callback_data="240"),
+                InlineKeyboardButton("𝟯𝟲𝟬𝗽", callback_data="360")
             ],
             [
-                InlineKeyboardButton("480", callback_data="480"),
-                InlineKeyboardButton("720", callback_data="720"),
-                InlineKeyboardButton("1080", callback_data="1080")
+                InlineKeyboardButton("𝟰𝟴𝟬𝗽", callback_data="480"),
+                InlineKeyboardButton("𝟳𝟮𝟬𝗽", callback_data="720"),
+                InlineKeyboardButton("𝟭𝟬𝟴𝟬𝗽", callback_data="1080")
             ],
             [
                 InlineKeyboardButton("cancel/stop", callback_data="stop")
@@ -130,22 +137,32 @@ async def account_login(bot: Client, m: Message):
 )
     input2: CallbackQuery = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
-    await input2.delete(True)
+    await input2.message.delete(True)
     try:
         if raw_text2 == "144":
             res = "256x144"
+            await m.reply_text(f"Selected resolution: {res}")
+            await m.reply_text(f"144")
         elif raw_text2 == "240":
             res = "426x240"
+            await m.reply_text(f"Selected resolution: {res}")
+            await m.reply_text(f"240")
         elif raw_text2 == "360":
             res = "640x360"
+            await m.reply_text(f"Selected resolution: {res}")
+            await m.reply_text(f"360")
         elif raw_text2 == "480":
             res = "854x480"
+            await m.reply_text(f"Selected resolution: {res}")
         elif raw_text2 == "720":
             res = "1280x720"
+            await m.reply_text(f"Selected resolution: {res}")
         elif raw_text2 == "1080":
             res = "1920x1080" 
+            await m.reply_text(f"Selected resolution: {res}")
         else: 
             res = "UN"
+            await m.reply_text("Invalid selection❌")
     except Exception:
             res = "UN"
     
