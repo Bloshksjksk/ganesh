@@ -92,7 +92,7 @@ async def account_login(bot: Client, m: Message):
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("**Now Please Send Me Your Batch/file Name**")
+    await editable.edit("**Now Please Send Me Your name or refrence**")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
@@ -118,27 +118,27 @@ async def account_login(bot: Client, m: Message):
 )
     input2: CallbackQuery = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
-    await input2.delete(True)
+   # await input2.delete(True)
     try:
-        if raw_text2 == "144":
+        if raw_text2 == "144" or input2:
             res = "256x144"
             await m.reply_text(f"Selected resolution: {res}")
             await m.reply_text(f"144")
-        elif raw_text2 == "240":
+        elif raw_text2 == "240" or input2:
             res = "426x240"
             await m.reply_text(f"Selected resolution: {res}")
             await m.reply_text(f"240")
-        elif raw_text2 == "360":
+        elif raw_text2 == "360" or input2:
             res = "640x360"
             await m.reply_text(f"Selected resolution: {res}")
             await m.reply_text(f"360")
-        elif raw_text2 == "480":
+        elif raw_text2 == "480" or input2:
             res = "854x480"
             await m.reply_text(f"Selected resolution: {res}")
-        elif raw_text2 == "720":
+        elif raw_text2 == "720" or input2:
             res = "1280x720"
             await m.reply_text(f"Selected resolution: {res}")
-        elif raw_text2 == "1080":
+        elif raw_text2 == "1080"or input2:
             res = "1920x1080" 
             await m.reply_text(f"Selected resolution: {res}")
         else: 
@@ -159,7 +159,7 @@ async def account_login(bot: Client, m: Message):
     else:
         MR = raw_text3
    
-    await editable.edit("Now send the Thumb url/nEg » https://telegra.ph/file/1bf523c4b51530e57e84d.jpg \n\n Or if don't want thumbnail send = no/n")
+    await editable.edit("Now send the Thumb url/nEg » https://telegra.ph/file/1bf523c4b51530e57e84d.jpg \n\n Or if don't want thumbnail send = no/n \n\n n=> it will send a Documnet📂\n\n no=> it will send a Video 🎥")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -211,8 +211,8 @@ async def account_login(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[📽️] 𝗩𝗜𝗗_𝗜𝗗:** {str(count).zfill(3)}.\n**𝙏𝙄𝙏𝙇𝙀 ➤** {𝗻𝗮𝗺𝗲𝟭} 『𝙏𝙍𝙐𝙈𝘽𝙊𝙏𝙎』.mkv\n**𝗕𝗔𝗧𝗖𝗛** » **{raw_text0}**\n\n**𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 ➤** {MR}'
-                cc1 = f'**[📁] 𝗣𝗗𝗙_𝗜𝗗:** {str(count).zfill(3)}.\n**𝙏𝙄𝙏𝙇𝙀 ➤** {𝗻𝗮𝗺𝗲𝟭}『𝙏𝙍𝙐𝙈𝘽𝙊𝙏𝙎』.pdf\n**𝗕𝗔𝗧𝗖𝗛** » **{raw_text0}**\n\n**𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 ➤** {MR}'
+                cc = f'**[📽️] 𝗩𝗜𝗗_𝗜𝗗:** {str(count).zfill(3)}.\n\n**𝙐𝙋𝙇𝙊𝘼𝘿 𝘽𝙔 ➤**『𝙏𝙍𝙐𝙈𝘽𝙊𝙏𝙎』\n\n**𝙍𝙀𝙌𝙐𝙀𝙎𝙏 𝘽𝙔** » **{raw_text0}**\n\n**𝗙𝗜𝗟𝗘 𝗡𝗔𝗠𝗘➤** {MR}'
+                cc1 = f'**[📁] 𝗣𝗗𝗙_𝗜𝗗:** {str(count).zfill(3)}.\n\n**𝙐𝙋𝙇𝙊𝘼𝘿 𝘽𝙔 ➤**『𝙏𝙍𝙐𝙈𝘽𝙊𝙏𝙎』\n\n**𝙍𝙀𝙌𝙐𝙀𝙎𝙏 𝘽𝙔** » **{raw_text0}**\n\n**𝗙𝗜𝗟𝗘 𝗡𝗔𝗠𝗘 ➤** {MR}'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
