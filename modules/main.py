@@ -120,25 +120,25 @@ async def account_login(bot: Client, m: Message):
     raw_text2 = input2.text
    # await input2.delete(True)
     try:
-        if raw_text2 == "144" or input2:
+        if raw_text2 == "144" or input2 == "144":
             res = "256x144"
             await m.reply_text(f"Selected resolution: {res}")
-            await m.reply_text(f"144")
-        elif raw_text2 == "240" or input2:
+            
+        elif raw_text2 == "240" or input2 == "240":
             res = "426x240"
             await m.reply_text(f"Selected resolution: {res}")
-            await m.reply_text(f"240")
-        elif raw_text2 == "360" or input2:
+            
+        elif raw_text2 == "360" or input2 == "360p":
             res = "640x360"
             await m.reply_text(f"Selected resolution: {res}")
-            await m.reply_text(f"360")
-        elif raw_text2 == "480" or input2:
+            
+        elif raw_text2 == "480" or input2 == "480p":
             res = "854x480"
             await m.reply_text(f"Selected resolution: {res}")
-        elif raw_text2 == "720" or input2:
+        elif raw_text2 == "720" or input2 == "720p":
             res = "1280x720"
             await m.reply_text(f"Selected resolution: {res}")
-        elif raw_text2 == "1080"or input2:
+        elif raw_text2 == "1080"or input2 == "1080p":
             res = "1920x1080" 
             await m.reply_text(f"Selected resolution: {res}")
         else: 
