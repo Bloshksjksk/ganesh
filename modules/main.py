@@ -59,26 +59,12 @@ async def account_login(bot: Client, m: Message):
 async def restart_handler(_, m):
     await m.reply_text("**Stopped**🚦\n\n <blockquote>start new one click => /upload </blockquote>", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
-    
-    input: CallbackQuery = await bot.listen(editable.chat.id)
-    raw_text = input.data
-    await input.message.delete(True)
-
-    if raw_text == "/stop":
-        await bot.stop()
 
 
 
 @bot.on_message(filters.command(["upload"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(' 𝙎𝙚𝙣𝙙 𝘼 𝙏𝙚𝙭𝙩 𝙁𝙞𝙡𝙚 𝙏𝙝𝙖𝙩 𝘾𝙤𝙣𝙩𝙖𝙞𝙣𝙨 𝙇𝙞𝙣𝙠 𝙊𝙣𝙚 𝘽𝙮 𝙊𝙣𝙚..🔗', reply_markup=InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("cancel/stop", callback_data="stop")
-            ]
-        ]
-    )
-)
+    editable = await m.reply_text(' 𝙎𝙚𝙣𝙙 𝘼 𝙏𝙚𝙭𝙩 𝙁𝙞𝙡𝙚 𝙏𝙝𝙖𝙩 𝘾𝙤𝙣𝙩𝙖𝙞𝙣𝙨 𝙇𝙞𝙣𝙠 𝙊𝙣𝙚 𝘽𝙮 𝙊𝙣𝙚..🔗 \n\n <b><strong>If You Want to Cancel the task Click</strong></b> => /stop')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -100,13 +86,8 @@ async def account_login(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"**𝕋ᴏᴛᴀʟ ʟɪɴᴋ𝕤 ғᴏᴜɴᴅ ᴀʀᴇ🔗🔗** **{len(links)}**\n\n** Tell No of Links You Wants ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ɪɴɪᴛɪᴀʟ ɪ𝕤 ** **1**\n\n If It One Means it Will Download 1-link or first link",reply_markup=InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("cancel/stop", callback_data="stop")
-            ]
-        ]
-    ))
+    await editable.edit(f"**𝕋ᴏᴛᴀʟ ʟɪɴᴋ𝕤 ғᴏᴜɴᴅ ᴀʀᴇ🔗🔗** **{len(links)}**\n\n** Tell No of Links You Wants ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ɪɴɪᴛɪᴀʟ ɪ𝕤 ** **1**\n\n If It One Means it Will Download 1-link or first link \n\n <b><strong>If You Want to Cancel the task Click</strong></b> => /stop")
+    
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
@@ -137,7 +118,7 @@ async def account_login(bot: Client, m: Message):
 )
     input2: CallbackQuery = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
-    await input2.message.delete(True)
+    await input2.delete(True)
     try:
         if raw_text2 == "144":
             res = "256x144"
