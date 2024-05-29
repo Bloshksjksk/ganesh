@@ -98,67 +98,45 @@ async def account_login(bot: Client, m: Message):
     await input1.delete(True)
     
 
-    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸 Just For Fun 😜😜**",reply_markup=InlineKeyboardMarkup(
+    await editable.edit("**𝔼ɴᴛᴇʀ ʀᴇ𝕤ᴏʟᴜᴛɪᴏɴ📸 Just For Fun 😜😜\n144\n240\n360\480\n720\n1080\n\n Sometimes it won't work coz Youtube Restriction**",reply_markup=InlineKeyboardMarkup(
         [
-            [
-                InlineKeyboardButton("𝟭𝟰𝟰𝗽", callback_data="144"),
-                InlineKeyboardButton("𝟮𝟰𝟬𝗽", callback_data="240"),
-                InlineKeyboardButton("𝟯𝟲𝟬𝗽", callback_data="360")
-            ],
-            [
-                InlineKeyboardButton("𝟰𝟴𝟬𝗽", callback_data="480"),
-                InlineKeyboardButton("𝟳𝟮𝟬𝗽", callback_data="720"),
-                InlineKeyboardButton("𝟭𝟬𝟴𝟬𝗽", callback_data="1080")
-            ],
             [
                 InlineKeyboardButton("Any Doubt !? ", url="https://t.me/fligher")
             ]
         ]
     )
 )
-    input2: CallbackQuery = await bot.listen(editable.chat.id)
+    input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     await input2.delete(True)
     try:
         if raw_text2 == "144":
             res = "256x144"
-            await m.reply(raw_text2)
-            await input2.answer("Just for fun! type the value as 144")
-            await m.reply_text(f"Selected resolution: {res}")
+         
             
         elif raw_text2 == "240":
             res = "426x240"
-            await m.reply(raw_text2)
-            await input2.answer("Just for fun! type 240")
-            await m.reply_text(f"Selected resolution: {res}")
+           
             
         elif raw_text2 == "360":
             res = "640x360"
-            await m.reply(raw_text2)
-            await input2.answer("Just for fun! type 360")
-            await m.reply_text(f"Selected resolution: {res}")
+         
             
         elif raw_text2 == "480":
             res = "854x480"
-            await m.reply(raw_text2)
-            await input2.answer("Just for fun! type 480p")
-            await m.reply_text(f"Selected resolution: {res}")
+          
             
         elif raw_text2 == "720":
             res = "1280x720"
-            await m.reply(raw_text2)
-            await input2.answer("Just for fun! type 720p")
-            await m.reply_text(f"Selected resolution: {res}")
+      
             
         elif raw_text2 == "1080":
         
             res = "1920x1080" 
-            await m.reply(raw_text2)
-            await input2.answer("Just for fun! type 1080p")
-            await m.reply_text(f"Selected resolution: {res}")
+         
         else: 
             res = "UN"
-            await m.reply_text("Invalid selection❌")
+           
     except Exception:
             res = "UN"
     
